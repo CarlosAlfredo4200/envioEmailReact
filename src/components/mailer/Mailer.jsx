@@ -1,38 +1,43 @@
 import React from 'react'
- import emailJs from '@emailjs/browser'    
+import emailJs from '@emailjs/browser'
 const Mailer = () => {
 
-    const handleSendEmail = (e) => {
-        e.preventDefault();
-        emailJs.sendForm('service_z8a2w1q','template_euv2tce', e.target,'N3e1-whV4JTikibSb')
-        .then(res => console.log(res))
-        .catch (error => console.log(error))
-    }
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    emailJs.sendForm('service_kddi63k', 'template_euv2tce', e.target, 'N3e1-whV4JTikibSb')
+      .then(res => console.log(res))
+      .catch(error => console.log(error))
+  }
   return (
-    <div className='formulario'> 
-        <form className='form' onSubmit={handleSendEmail}>
-           <div>
-            
-            <label>Nombre</label>
-            <input type="test"  name='username'/>
-           </div>
+    <div className='formulario'>
+      <form className='form' onSubmit={handleSendEmail}>
+        <div className='inputs'>
 
-           <div>
+          <div>
+          <label>Nombre</label>
 
-            <label>Correo</label>
-            <input type="email"  name='email'/>
-           </div>
+            <input className='inputs' type="test" name='username' />
+          </div>
+        </div>
 
-           <div>
+        {/* <div>
 
-            <label>Mensaje</label>
-             <textarea name='mensaje'></textarea>
-           </div>
+          <label>Correo</label>
+          <input type="email" name='email' />
+        </div> */}
 
-             <button>Enviar</button>
-        </form>
+        <div>
+
+          <label>Mensaje</label>
+          <textarea name='mensaje'></textarea>
+        </div>
+
+        <button>Enviar</button>
+      </form>
     </div>
   )
 }
 
 export default Mailer
+
+
